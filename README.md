@@ -175,9 +175,18 @@ DEFAULT_FILE_STORAGE = 'mynewapp.settings.DefaultStorageClass'
 SECURE_SSL_REDIRECT = False
 ```
 
+## How to run
 1. install python
 2. python -m pip install --user --upgrade pip
 3. python3 -m pip install --user virtualenv
 4. pip3 install venv 
 5. python manage.py migrate 
 6. python manage.py runserver
+7. python manage.py createsuperuser
+8. Put any Username and Password
+9. To access website run http://localhost:8080/
+10. To access admin run http://localhost:8080/admin
+11. and enter your credential
+
+For reference visit https://vsc-stage.us.aldryn.io/
+for admin reference visit https://vsc-stage.us.aldryn.io/admin/
