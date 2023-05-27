@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static %}
+{% block head %}
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'css/scss/404.css' %}">
+{% endblock head %}
+{% block content_links %}
+<div class="error-div">
+<img class="error-img" src="{% static 'images/illustration/404_1.svg' %}" alt="404 Error">
+</div>
+<div class="primary-links">
+    <ul>
+        <li class="btn-2"><a href="#detailed_div"><span>Q.Paper</span></a></li>
+        <li class="btn-1"><a href="{% url 'notes:notes'%}BSC/"><span>Notes</span><span>Notes</span></a></li>
+        <li class="btn-3"><a href="#">Solutions</a></li>
+        <li class="btn-4"><a
+                href="{% url 'api:upload' %}">Upload<span></span><span></span><span></span><span></span></a></li>
+    </ul>
+</div>
+{% endblock content_links %}
+{% block sections %}
+{% endblock sections %}
+{% block quotes%}{% endblock quotes %}
+ {% block j_quotes %} {% endblock j_quotes %}

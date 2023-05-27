@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% load static %}
+{% block head %}
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'css/scss/nts_slns.css' %}">
+{% endblock head %}
+{% block content_links %}
+<div class="res_container">
+    <h1>Solotions</h1>
+    <div class="selection_container" id="detailed_div">
+        <div class="courses">
+            <h2>Courses :</h2>
+            <ul>
+                {% for key, c_name in course_list %}
+                <li><a class="{% if c_name_1|safe == c_name|default:1|safe %} active {% endif %}"
+                        href="{% url 'solutions_page:solutions' %}{{ c_name }}#detailed_div">{{ c_name }}</a></li>
+                {% empty %}
+                <li>Sorry, no Course in our database.</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="semester">
+            <h2>Sem :</h2>
+            <ul>
+                {% for sem_id_1, sem_name in sem_list.items %}
+                <li><a class="{% if sem_id_1|safe == sem_id|default:1|safe %} active {% endif %}"
+                        href="{% url 'solutions_page:solutions' %}{{ c_name_1|default:1 }}/{{sem_id_1}}#detailed_div">{{sem_name}}</a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="subjects">
+            <h2>Subjects :</h2>
+            <ul>{% for subject in sub_list%}
+                <li><a class="{% if sub_name|safe|default:'hindi' == subject|safe %} active {% endif %}"
+                        href="{% url 'solutions_page:solutions' %}{{ c_name_1|default:1 }}/{{sem_id|default:1}}/{{ subject }}#detailed_div">
+                        {{subject|capfirst}}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <div class="sub_res_container" id="result">
+        <div>
+            <h2>Result :</h2>
+            <ul>
+                {% for solution in solutions_queryset %}
+                {% if solution.file_size %}
+                <li><a href="{{ solution.file.url }}">{{solution.file_name}}
+                        <span style="color:#bbdefb; font-size:small "> - {{solution.file_size}}</span></a></li>
+                {%endif%}
+                {% empty %}
+                <li><a>Sorry, no solution in our database.</a></li>
+                {%endfor%}
+            </ul>
+        </div>
+        {% if s_links_queryset %}
+        <div>
+            <h2>imp links :</h2>
+            <ul>
+                {% for link in s_links_queryset %}
+                <li><a title="{{ link.s_link_about}}" href="{{link.s_link}}">{{link.s_link}}</a></li>
+                {% empty %}
+                <li> <a>Sorry, No link found in our database.</a></li>
+                {%endfor%}
+            </ul>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock content_links %}

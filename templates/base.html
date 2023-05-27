@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+{% block head %}
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VeerShiava Collage Ballary</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/scss/style1.css' %}" />
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/favicon_io/apple-touch-icon.png' %}" />
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/favicon_io/favicon-32x32.png' %}" />
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/favicon_io/favicon-16x16.png' %}" />
+    <link rel="manifest" href="{% static 'images/favicon_io/site.webmanifest' %}" />
+    <script defer src="https://use.fontawesome.com/releases/v5.15.3/js/all.js"></script>
+</head>
+{% endblock %}
+
+<body>
+    <section>
+        <header class="navbar">
+            <div>
+                <a role="button" href="{% url 'home_page:home_page' %}" class="logo">
+                    <img src=" {% static '/images/favicon_io/favicon.ico' %}" alt="VSC" />VSC</a>
+                <div class="menu-btn"><span></span><span></span><span></span></div>
+            </div>
+            <ul class="navigation nav-hide">
+                <li><a class=" {% if '/Q_' in request.path %} active {% endif %} "
+                        href="{% url 'home_page:ques' %}BSC#detailed_div">Q.Paper</a></li>
+                <li><a class="{% if '/notes' in request.path %} active {% endif %}"
+                        href="{% url 'notes:notes' %}BSC/">Notes</a></li>
+                <li><a class="{% if '/sol' in request.path %} active {% endif %}"
+                        href="{% url 'solutions_page:solutions' %}BSC/">Solutions</a></li>
+                <li><a class="{% if '/api/upl' in request.path %} active {% endif %}"
+                        href="{% url 'api:upload' %}">Upload</a></li>
+                <li><a class="{% if '/about' in request.path %} active {% endif %}" href="{% url 'about:about' %}">About
+                        me</a></li>
+            </ul>
+        </header>
+        {% block content_links %} {% endblock content_links %}
+    </section>
+    {% block content %}{% endblock content %}
+    {% block sections %} {% endblock sections %}
+    {% block quotes %}
+    <section>
+        <div id="xyz" class="container-2">
+            <h1 class="heading" id="detailed_div">Quotes of the Day</h1>
+            <div class="card-wrapper carousel">
+                <div class="card carousel-item carousel-item--visible">
+                    <img src="{% static 'images/back-images/noise.png' %}" alt="" class="card-img" />
+                    <div id='profile_img_1' alt="" class="profile-img"></div>
+                    <h1 id="author_1" class="name">Author</h1>
+                    <p id="quotes_1" class="quotes"></p>
+                </div>
+                <div class="card carousel-item">
+                    <img src="{% static 'images/back-images/noise.png' %}" alt="" class="card-img" />
+                    <div id="profile_img_2" alt="" class="profile-img"></div>
+                    <h1 id="author_2" class="name">Author</h1>
+                    <p id="quotes_2" class="quotes"></p>
+                </div>
+                <div class="card carousel-item">
+                    <img src="{% static 'images/back-images/noise.png' %}" alt="" class="card-img" />
+                    <div id="profile_img_3" alt="" class="profile-img"></div>
+                    <h1 id="author_3" class="name">Author</h1>
+                    <p id="quotes_3" class="quotes"></p>
+                </div>
+                <div class="card carousel-item">
+                    <img src="{% static 'images/back-images/noise.png' %}" alt="" class="card-img" />
+                    <div id="profile_img_4" alt="" class="profile-img"></div>
+                    <h1 id="author_4" class="name">Author</h1>
+                    <p id="quotes_4" class="quotes"></p>
+                </div>
+                <div class="carousel-action">
+                    <button id="carousel-button--prev"><span></span></button>
+                    <button id="carousel-button--next"><span></span></button>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% endblock quotes %}
+    <footer>
+        <img src="{% static 'images/favicon_io/apple-touch-icon.png' %}" alt="" />
+        <div class="foo-about">
+            <h2>VeerShiava Collage</h2>
+            <p>
+                175 Hospet Rd, Vijaya Nagar,<br>
+                Cantonment, Ballari, Karnataka 583104<br>
+                +91 83922 42185
+            </p>
+            <span class="foo-divider"></span>
+            <ul>
+                <li><a href="">Privacy</a></li>
+                <li><a href="">Policies</a></li>
+                <li><a href="https://www.veerashaivacollege.org/">Contact</a></li>
+                <li><a href="https://www.veerashaivacollege.org/">Newsroom</a></li>
+                <li><a href="http://vskub.ac.in/">Visit VSC</a></li>
+            </ul>
+        </div>
+        <div class="foo-follow-visit_us">
+            <div>
+                <h4>FOLLOW US:</h4>
+                <ul class="social-icon">
+                    <li>
+                        <a href="https://www.facebook.com/maurya.mayank.5/"><i class="fab fa-facebook-f"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/_Ritik_Kushwaha"><i class="fab fa-twitter"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/ritik_kushwaha123/"><i class="fab fa-instagram"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://www.youtube.com/channel/UChXE2T1lfRLv1HDGquoLiuA"><i
+                                class="fab fa-youtube"></i></a>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <h4>VISIT US:</h4>
+                <ul class="social-icon">
+                    <li>
+                        <a href="https://t.me/Ritik_dev_Vsc"><i class="fab fa-telegram-plane"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/Ritik3236/web"><i class="fab fa-github"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://www.reddit.com/user/No_Situation_2168"><i class="fab fa-reddit"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/ritik-kushwaha/"><i class="fab fa-linkedin"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="foo-support-work">
+            <div>
+                <h4>SUPPORT US:</h4>
+                <ul class="social-icon">
+                    <li>
+                        <a href=""><i class="fab fa-google-pay"></i></a>
+                    </li>
+                    <li>
+                        <a href=""><i class="fab fa-bitcoin"></i></a>
+                    </li>
+                    <li>
+                        <a href=""><i class="fab fa-ethereum"></i></a>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <h4>WORK WITH US:</h4>
+                <p>Wanna Contribute to <a>project</a></p>
+            </div>
+        </div>
+        <div class="foo-links">
+            <h4>RESOURCES & LINKS:</h4>
+            <ul>
+                <div>
+                    <li><a href="{% url 'notes:notes'%}BSC/">Notes</a></li>
+                    <li><a href="{% url 'solutions_page:solutions' %}BSC/">Solutions</a></li>
+                    <li><a href="{% url 'home_page:ques' %}1/#detailed_div">Question Paper</a></li>
+                </div>
+                <div>
+                    <li><a href="">Ideas</a></li>
+                    <li><a href="">Miscellaneous</a></li>
+                    <li><a href="">Emergency Info</a></li>
+                </div>
+            </ul>
+        </div>
+        <span class="copyright"> Made with <i class="fas fa-heart"></i> by <a style="color:#d7d5d7;"
+                href="{% url 'about:about'%}"> Ritik Kushwaha </a></span>
+    </footer>
+    <!-- Script -->
+    <script>
+        const menuBtn = document.querySelector(".menu-btn");
+        const navBtn = document.querySelector(".navigation");
+        let menuOpen = false;
+        menuBtn.addEventListener("click", () => {
+            if (!menuOpen) {
+                menuBtn.classList.add("open");
+                navBtn.classList.remove("nav-hide");
+                menuOpen = true;
+            } else {
+                menuBtn.classList.remove("open");
+                navBtn.classList.add("nav-hide");
+                menuOpen = false;
+            }
+        });
+    </script>
+    {% block j_quotes %}
+    <script src="{% static '/javascripts/carousel.js' %}"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        axios
+            .get(" {% url 'api:quote' %}")
+            .then(response => {
+                var items = JSON.parse(response.data.context.data)
+                for (let i = 1; i <= Math.min(items.length, 4); i++) {
+                    document.getElementById('author_' + i).innerHTML = items[i - 1].fields.author
+                    document.getElementById('quotes_' + i).innerHTML = items[i - 1].fields.quote
+                }
+
+                var image_url = response.data.context.image_url
+
+                for (let i = 1; i <= Math.min(image_url.length, 4); i++) {
+                    document.getElementById('profile_img_' + i).style.backgroundImage = "url(" + image_url[i - 1] +
+                        ")";
+                }
+            })
+            .catch(error => {
+                alert(error)
+            })
+    </script>
+    {% endblock j_quotes %}
+    {% block j_script %} {% endblock j_script %}
+</body>
+
+</html>

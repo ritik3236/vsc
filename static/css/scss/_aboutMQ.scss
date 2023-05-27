@@ -1,0 +1,115 @@
+@media screen and (max-width: 720px) {
+    body {
+        section:nth-child(1) {
+            padding: 1.7rem;
+
+        }
+    }
+
+    .portfolio {
+        padding: 0;
+        margin-bottom: 1rem;
+
+        .sub-about,
+        .sub-skill,
+        .sub-experience {
+            padding: 1rem;
+        }
+
+        .sub-name .cv-name {
+            margin: 1rem;
+
+            .name {
+                font-size: 1.5rem;
+            }
+        }
+
+        .sub-about {
+            gap: 20px;
+            padding-bottom: 0;
+            flex-direction: column;
+
+            .cv-profile {
+                width: 100%;
+
+                p {
+                    padding: 0px 2rem;
+                }
+            }
+
+            .profile-img2 {
+                display: flex;
+                order: -1;
+                align-self: center;
+            }
+
+            .profile-img {
+                transform: translateY(0px);
+
+                &::after {
+                    left: 19%;
+                    width: 31%;
+                }
+            }
+
+            .cv-address {
+                width: 100%;
+                gap: 5px;
+                align-items: center;
+
+                >div {
+                    width: 80%;
+
+                    &:first-child {
+                        margin-top: 0;
+                    }
+                }
+            }
+        }
+
+        .sub-skill {
+            gap: 20px;
+            flex-direction: column;
+
+            .cv-skill {
+                margin: 0;
+            }
+
+            .cv-education,
+            .cv-skill,
+            .cv-certificate {
+                width: 100%;
+                padding: 25px;
+            }
+
+            .cv-education .heading::after {
+                content: none;
+            }
+
+            .cv-certificate .heading::after {
+                content: none;
+            }
+        }
+
+        .sub-experience {
+            .heading {
+                margin: 0 10%;
+
+                &::after {
+                    content: none;
+                }
+            }
+
+            .experience-1 {
+                align-items: end;
+                flex-direction: column;
+                padding: 0 25px;
+
+                div:first-child {
+                    width: 100%;
+
+                }
+            }
+        }
+    }
+}

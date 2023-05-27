@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+{% load static %}
+{% block head %}
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'css/scss/about.css' %}">
+{% endblock head %}
+
+{% block sections %}
+
+<section class="portfolio">
+    <div class="sub-name">
+        <div class="cv-name">
+            <div class="name">Ritik Kushwaha</div>
+            <div class="title">Full-stack web developer</div>
+        </div>
+    </div>
+    <div class="sub-about">
+        <div class="cv-profile">
+            <div class="heading-profile">Profile</div>
+            <p>
+                An Energetic, Fast learner, Web Designer with clear understanding of modern technologies and best design
+                practices. Whose aim to create attractive, functional, and responsive websites within the deadline.
+            </p>
+        </div>
+        <div class="profile-img2">
+            <div class="profile-img"></div>
+        </div>
+        <div class="cv-address">
+            <div class="">123 Street,Ghazipur, UP, INDIA<i class="fas fa-map-marker-alt"></i></div>
+            <div class="">Ritikkushwaha1234@gmail.com<i class="far fa-envelope"></i></div>
+            <div class="">www.vsc.us.aldryn.io<i class="fab fa-react"></i></div>
+            <div class="">+91 9118713015<i class="fas fa-mobile"></i></div>
+        </div>
+    </div>
+    <div class="sub-skill">
+        <div class="cv-education">
+            <div class="heading">Education</div>
+            <div class="edu-1">
+                <h4>Pre University</h4>
+                <p>Harihar Singh Inter Collage<br>2015 - 2017</p>
+            </div>
+            <div class="edu-2">
+                <h4>BSc(cs)</h4>
+                <p>veerShiava Collage Ballary <br>2019 - 2021</p>
+            </div>
+        </div>
+        <div class="cv-skill">
+            <div class="heading">Skill</div>
+            <div class="skill-1">
+                <h4>Front-End</h4>
+                <p>
+                    CSS3/SASS<br>
+                    JavaScript | REST APIs<br><br>
+                    <!-- JavaScript | React<br> -->
+                    <!-- Angular | REST APIs <br><br> -->
+                </p>
+            </div>
+            <div class="skill-2">
+                <h4>Back-End</h4>
+                <p>
+                    NodeJS | npm<br>
+                    Python | Django<br>
+                    Database | FireBase<br>
+                    Deployment | Docker<br><br>
+                </p>
+            </div>
+            <div class="skill-3">
+                <h4>Miscellaneous</h4>
+                <p>
+                    Git | npm<br>
+                    Figma<br>
+                </p>
+            </div>
+        </div>
+        <div class="cv-certificate">
+            <div class="heading">Certificate</div>
+            <div class="certificate-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda modi quia
+                dolore minus neque eos est, </div>
+            <div class="certificate-2">temporibus ab perferendis maiores delectus quasi id pariatur mollitia sit
+                quidem fugiat dolor sint?</div>
+        </div>
+    </div>
+    <div class="sub-experience">
+        <div class="heading">Work Experience</div>
+        <div class="experience-1" style="margin-bottom: 1rem">
+            <div>
+                <h4>Web Designer</h4>
+
+                <p>Implementing integrated stripe payment method to boost company
+                    profit and decrease user hassle of the offline payment.
+                    Minor improvement in the website UI.<br>
+                    Used - Django, Bootstrap, Stripe API.
+                </p>
+            </div>
+            <div>LegalSuvidha Providers <br> Gurugram Haryana <br> 2020-2021</div>
+        </div>
+        <div class="experience-1">
+            <div>
+                <h4>Creater</h4>
+                <p>Built a responsive web app using Django and Divio (cloud Web Provider) that allowed VSC students to
+                    find collage notes, solutions, very efficiently.</p>
+            </div>
+            <div style="width: 150px;"> 2021 - Present </div>
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock sections %}
+
+{% block quotes %}
+{% endblock quotes %}
+{% block j_quotes %}{% endblock j_quotes %}

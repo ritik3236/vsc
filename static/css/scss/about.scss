@@ -1,0 +1,334 @@
+body section:nth-child(1) {
+    position: relative;
+    padding: 4rem;
+    background: #ffffff;
+}
+
+.portfolio {
+    padding: 0 20%;
+    margin-bottom: 3rem;
+    font-family: sans-serif;
+    font-size: 13px;
+    font-weight: normal;
+
+    .sub-name {
+        display: flex;
+        justify-content: center;
+        background: #4eaa32;
+        text-align: center;
+        border-top: 1px solid #8d8d8d;
+        border-left: 1px solid #8d8d8d;
+        border-right: 1px solid #8d8d8d;
+
+        .cv-name {
+            position: relative;
+            margin: 2rem 4rem;
+            padding: 1rem 3rem;
+            background: #fff;
+            border-radius: 10px;
+
+            &::after {
+                content: '';
+                display: block;
+                position: absolute;
+                top: 8px;
+                bottom: 8px;
+                left: 8px;
+                right: 8px;
+                border-radius: 10px;
+                border: 1px solid #8b8b8b;
+            }
+        }
+
+        .name {
+            font-size: 2rem;
+            color: #1a1a1a;
+            position: relative;
+            letter-spacing: 2px;
+            padding-bottom: 15px;
+            font-family: monospace;
+            text-transform: uppercase;
+
+            &::after {
+                content: '';
+                position: absolute;
+                width: 20%;
+                height: 2px;
+                bottom: 0;
+                margin-bottom: 5px;
+                left: 50%;
+                transform: translateX(-50%);
+                background: #646464;
+            }
+        }
+
+        .title {
+            color: #414141;
+            font-size: 12px;
+            text-transform: uppercase;
+        }
+    }
+
+    .sub-about {
+        display: flex;
+        padding: 3rem 3rem 2rem 3rem;
+        justify-content: space-between;
+        border-left: 1px solid #8d8d8d;
+        border-right: 1px solid #8d8d8d;
+
+        .cv-profile {
+            width: 35%;
+
+            p {
+                margin-top: 0.5rem;
+                text-align: justify;
+                text-align-last: center;
+            }
+        }
+
+
+        .heading-profile {
+            position: relative;
+            color: #4da832;
+            font-size: 16px;
+            font-weight: 600;
+            text-align: center;
+            letter-spacing: 2px;
+            padding-bottom: 11px;
+            text-transform: uppercase;
+
+            &::after {
+                content: '';
+                position: absolute;
+                width: 40%;
+                height: 2px;
+                bottom: 0;
+                margin-bottom: 6px;
+                left: 50%;
+                transform: translateX(-50%);
+                background: #9b9a97;
+            }
+
+
+        }
+
+        .profile-img {
+            background-image: url("/static/images/quotes-img/profile.png");
+            width: 8.2rem;
+            height: 8.2rem;
+            object-fit: cover;
+            border-radius: 50%;
+            transform: translateY(-25px);
+            background-color: #f1f1f7;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: 0%;
+                left: 8%;
+                width: 42%;
+                height: 1px;
+                transform-origin: right;
+                transform: rotate(90deg);
+                background-color: #515151;
+            }
+
+        }
+
+        .cv-address {
+            display: flex;
+            width: 35%;
+            flex-direction: column;
+            justify-content: space-between;
+
+            &>div {
+
+                &:first-child {
+                    margin-top: 20px;
+                }
+
+                &:nth-child(n) {
+                    border-bottom: 1px solid #b2b2b2;
+                }
+
+                &:last-child {
+                    letter-spacing: 1px;
+                }
+
+                svg {
+                    float: right;
+                    color: #4eaa32;
+                    margin-top: 3px;
+                }
+            }
+        }
+    }
+
+    .heading {
+        background: #fff;
+        color: #4da832;
+        font-size: 16px;
+        font-weight: 600;
+        text-align: center;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        border: 2px solid #4da832;
+        border-radius: 5px;
+    }
+
+    .sub-skill {
+        display: flex;
+        padding: 3rem;
+        border-left: 1px solid #8d8d8d;
+        border-right: 1px solid #8d8d8d;
+
+        .cv-education,
+        .cv-skill,
+        .cv-certificate {
+            padding: 25px;
+            width: 33.3%;
+            text-align: center;
+            position: relative;
+        }
+
+        .cv-certificate,
+        .cv-education {
+
+
+            .heading {
+                margin: 0 1rem;
+            }
+        }
+
+
+        .cv-education {
+            padding-left: 0;
+
+            .heading::after {
+                content: '';
+                top: 40px;
+                right: 0;
+                position: absolute;
+                width: 16%;
+                height: 1px;
+                z-index: 1;
+                background: #8d8a8a;
+            }
+
+            h4 {
+                text-transform: uppercase;
+                padding: 15px 0 5px;
+            }
+
+            p {
+                text-transform: uppercase;
+            }
+        }
+
+        .cv-certificate {
+            border: 1px;
+            padding-right: 0;
+
+            .heading::after {
+                content: '';
+                top: 40px;
+                left: 0;
+                position: absolute;
+                width: 16%;
+                height: 1px;
+                z-index: 1;
+                background: #8d8a8a;
+            }
+        }
+
+        .cv-skill {
+            border: 1px solid #8d8a8a;
+            margin-top: -15px;
+            margin-bottom: -40px;
+
+            .skill-1 {
+                margin-top: -25px;
+            }
+
+            h4 {
+                margin-bottom: 9px;
+            }
+
+            p {
+                font-size: 12px;
+                line-height: 20px;
+            }
+
+            .heading {
+                transform: translateY(-40px);
+                background: white;
+                margin: 0 2rem;
+            }
+        }
+    }
+
+    .sub-experience {
+
+        padding: 0 3rem 2rem;
+        border-bottom: 1px solid #8d8d8d;
+        border-left: 1px solid #8d8d8d;
+        border-right: 1px solid #8d8d8d;
+
+        .heading {
+            position: relative;
+            margin: 0 36%;
+            background: white;
+            transform-style: preserve-3d;
+            transform: translateY(-22px);
+
+            &::after {
+                position: absolute;
+                content: '';
+                top: 11px;
+                left: -20vw;
+                width: 54vw;
+                height: 1px;
+                background-color: #8b8b8b;
+                transform: translateZ(-1px)
+            }
+        }
+
+        .experience-1 {
+            display: flex;
+            gap: 5px;
+            justify-content: space-between;
+            align-items: center;
+
+            h4 {
+                margin-bottom: 5px;
+            }
+
+            div:first-child {
+                width: 70%;
+
+            }
+        }
+
+
+
+        // .experience-1 {
+        //     h4{
+        //         margin-bottom: 5px;
+        //     }
+        //     &>div {
+        //         display: flex;
+        //         gap: 2rem;
+        //         justify-content: space-between;
+
+        //         p {
+        //             width: 70%;
+        //         }
+        //     }
+        // }
+    }
+}
+
+@import "aboutMQ"

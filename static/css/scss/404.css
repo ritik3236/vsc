@@ -1,0 +1,19 @@
+.error-div {
+  display: flex;
+  justify-content: center;
+  margin: 4rem 0;
+}
+
+.error-img {
+  width: 56%;
+}
+
+@media screen and (max-width: 768px) {
+  .error-img {
+    width: 100%;
+  }
+
+  .error-div {
+    margin: 0 0 4rem 0;
+  }
+}/*# sourceMappingURL=404.css.map */

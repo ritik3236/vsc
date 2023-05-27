@@ -1,0 +1,117 @@
+{% extends "base.html" %}
+{% load static %}
+{% block head %}
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'css/scss/upload.css' %}">
+{% endblock head %}
+{% block content_links %}
+<h1 class="upload_title"> Help other students by sharing <span style="color:hotpink">Question Papers, Solutions, Notes
+    </span><br>
+    that are currently not available here.</h1>
+<div class="form">
+    <div class="form-card">
+        <form enctype="multipart/form-data" onsubmit="onFormSubmit(event)">
+            <h3 style="text-align: center;">Submit Your Files Here</h3>
+            <h4 id="upload_result" style="text-align: center; color: green;"></h4>
+            <div class="divider"></div>
+            <label for="{{ form.name.id_for_label }}">Name<span>*{{errors.name}}</span></label>
+            {{ form.name }}
+            <label for="{{ form.email.id_for_label }}">Email</label>
+            {{form.email}}
+            <label for="{{ form.type.id_for_label }}">Type<span>*</span></label>
+            {{form.type}}
+            <label for="{{form.document.id_for_label}}">Upload Your File/Files<span>*</span></label>
+            {{form.document}}
+            <label for="{{ form.description.id_for_label}}">Description</label>
+            <div>{{ form.description}}</div>
+            <input id="submit" type="submit" value="Submit">
+            <div id="progress"> <span id="progress-bar"></span></div>
+        </form>
+    </div>
+    <img class="i-img" src="{% static 'images/illustration/upload.svg' %}" alt="x">
+</div>
+{% endblock content_links %}
+{% block sections %}
+<div class="c_board">
+    <table>
+        <caption>Top 20 Contributers</caption>
+        <thead>
+            <tr>
+                <th scope="col">Rank</th>
+                <th scope="col">User Name</th>
+                <th scope="col">Submission</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in contributors %}
+            <tr>
+                <td name = "rank-{{ forloop.counter }}" scope="row" data-label="Rank">{{ forloop.counter }}</td>
+                <td scope="row" data-label="User Name">{{item.name}}</td>
+                <td scope="row" data-label="Submission">{{item.count}}</td>
+            </tr>
+            {% empty %}
+            <p>Sorry, No Contributers</p>
+            {% endfor %}
+        </tbody>
+
+    </table>
+</div>
+
+{% endblock sections %}
+{% block j_script %}
+<script>
+    var fileInput = document.getElementById('id_document');
+    var fileList = [];
+
+    fileInput.addEventListener('change', function (e) {
+        fileList = [];
+        for (var i = 0; i < fileInput.files.length; i++) {
+            fileList.push(fileInput.files[i]);
+        }
+    })
+
+    function onFormSubmit(event) {
+
+        event.preventDefault();
+        var formData = new FormData();
+
+        formData.append("name", document.getElementById("id_name").value);
+        formData.append("email", document.getElementById("id_email").value);
+        formData.append("type", document.getElementById("id_type").value);
+        fileList.forEach(function (file) {
+            formData.append("document", file);
+        });
+        formData.append("description", document.getElementById("id_description").value);
+
+        var xhr = new XMLHttpRequest();
+        xhr.onload = function (e) {
+            var _response = JSON.parse(xhr.response);
+            document.getElementById("upload_result").innerHTML = _response.upload_result + " +" + _response.count;
+        }
+
+        xhr.open("POST", "{{ request.build_absolute_uri }}", true);
+        xhr.upload.addEventListener("progress", function (ev) {
+            if (ev.lengthComputable) {
+
+                var percentage = (ev.loaded / ev.total * 100 | 0);
+                var button = document.getElementById("submit");
+                var progress_bar = document.getElementById("progress-bar")
+
+                button.style["cursor"] = "not-allowed";
+                button.disabled = true;
+                document.getElementById("progress").style["display"] = "block";
+                progress_bar.style["width"] = "" + percentage + "%";
+                progress_bar.innerHTML = percentage + "% " +
+                    parseInt(ev.loaded / 1000) + "/" + parseInt(ev.total / 1000) + " KB";
+
+                if (percentage === 100) {
+                    button.style["cursor"] = "pointer";
+                    button.disabled = false;
+                    progress_bar.style["animation"] = "none"
+                }
+            }
+        });
+        xhr.send(formData);
+    }
+</script>
+{% endblock j_script%}

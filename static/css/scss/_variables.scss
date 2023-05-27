@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+/*===== VARIABLES CSS =====*/
+
+/*===== Colors & Background =====*/
+$logo-color:#040303;
+$back-color:#f1f1f7;
+$header-links-color:#3f3973;
+$btn-color: #FE5F55;
+$btn-back-color:#3d3632;
+$social-icon-color:#FE5F55;
+$social-icon-color-hover:#2196f3;
+$divider-color-f:#FE5F55;
+$divider-color-l:#f1f1f7;
+
+$card-title-color:#333;
+$card-back-color: #ee5c53;
+$card-profile-img-border:#f1f1f7;
+$card-sec-back-color:#f1f1f7;
+$card-quote-color:#1a1a1a;
+$card-quote-border:#222222;
+
+$foo-heading-color:#ffebee;
+$foo-about-color:#dac9cb;
+$foo-content-color:#ff7043;
+$foo-btn-color:#1f1f1f;
+
+$primary-color:#9b1abb;
+$primary-color-dark:#9b1abb;
+$primary-color-darken:rgb(173, 7, 7);
+$secondary-color:#9b1abb;
+$secondary-color-dark:rgb(5, 179, 5);
+$secondary-color-darken:rgb(2, 95, 2);
+$white-color:#FCF8F8;
+$dark-color:#3d3632;
+$blue-color:#47a1f7;
+$ham-color: #c983c7bf;
+// $divider-color-f:#4a4a59;
+// $divider-color-l:#db56f8;
+// $social-icon-color:#4b4b5b;
+// $social-icon-color-hover:#34325e;
+$backpic: url('/static/images/back-images/back.jpg');
+
+
+/*===== Font and typography =====*/
+$body-font: 'Poppins',
+sans-serif;
+$normal-font-size: .938rem;
+$medium-font-size: 1.2rem;
+$big-font-size: 2.5rem;
+
+$font-weight:500;
+
