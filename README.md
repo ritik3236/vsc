@@ -1,6 +1,6 @@
 How to setup
 
-replace below Code in vsc/mynewapp/settings.py
+replace below Code in vsc/mynewapp/settings.py from line **_5 to 175_**
 ```
 """
 Django settings for mynewapp project.
